@@ -1,19 +1,34 @@
 import PropTypes from 'prop-types';
+import {
+  SectionStatistics,
+  Title,
+  StatList,
+  StatItem,
+  Label,
+  Parcentage,
+} from './Staticics.styled';
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777216).toString(16)}`;
+}
 
 const Statistics = ({ title, stats }) => {
   return (
-    <section class="statistics">
-      {title && <h2 class="title">{title}</h2>}
+    <SectionStatistics>
+      {title && <Title>{title}</Title>}
 
-      <ul class="stat-list">
+      <StatList>
         {stats.map(item => (
-          <li class="item" key={item.id}>
-            <span class="label">{item.label}</span>
-            <span class="percentage">{item.percentage}%</span>
-          </li>
+          <StatItem
+            key={item.id}
+            style={{ backgroundColor: getRandomHexColor() }}
+          >
+            <Label>{item.label}</Label>
+            <Parcentage>{item.percentage}%</Parcentage>
+          </StatItem>
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </SectionStatistics>
   );
 };
 
@@ -22,7 +37,7 @@ export default Statistics;
 Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.exact({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,

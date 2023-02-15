@@ -1,5 +1,18 @@
 import PropTypes from 'prop-types';
 
+import {
+  ProfileCard,
+  Description,
+  PhotoUser,
+  NameUser,
+  TagUser,
+  LocationUser,
+  StatsList,
+  StatsItem,
+  Label,
+  QuantityStats,
+} from './Profile.styled';
+
 const Profile = ({
   avatar,
   username,
@@ -8,38 +21,42 @@ const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt="User avatar" class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">{tag}</p>
-        <p class="location">{location}</p>
-      </div>
+    <ProfileCard>
+      <Description>
+        <PhotoUser src={avatar} alt={username} />
+        <NameUser>{username}</NameUser>
+        <TagUser>@{tag}</TagUser>
+        <LocationUser>{location}</LocationUser>
+      </Description>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <StatsList>
+        <StatsItem>
+          <Label>Followers</Label>
+          <QuantityStats>{followers}</QuantityStats>
+        </StatsItem>
+        <StatsItem>
+          <Label>Views</Label>
+          <QuantityStats>{views}</QuantityStats>
+        </StatsItem>
+        <StatsItem>
+          <Label>Likes</Label>
+          <QuantityStats>{likes}</QuantityStats>
+        </StatsItem>
+      </StatsList>
+    </ProfileCard>
   );
 };
 
 export default Profile;
 
 Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  stats: PropTypes.object,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
