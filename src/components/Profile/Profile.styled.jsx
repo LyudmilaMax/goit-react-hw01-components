@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const ProfileCard = styled.div`
   width: 300px;
-  top: 50px;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: ${ props => `5px 5px 10px ${props.theme.colors.boxShadow}`};
@@ -19,7 +18,7 @@ export const Description = styled.div`
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  padding: 20px 10px;
+  padding: ${props => props.theme.spacing(4)};
   background-color: ${props => props.theme.colors.backgroundColorSecondary};
 `;
 
@@ -47,7 +46,6 @@ export const LocationUser = styled.p`
 
 export const StatsList = styled.ul`
   display: flex;
-  font-size: 20px;
 `;
 
 export const StatsItem = styled.li`
@@ -55,7 +53,7 @@ export const StatsItem = styled.li`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 10px;
+  padding: ${props => props.theme.spacing(2)};
   border: ${props => `1px solid ${props.theme.colors.borderColor}`};
 `;
 
@@ -66,7 +64,7 @@ export const Label = styled.span`
 `;
 
 export const QuantityStats = styled.span`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   text-align: center;
 `;

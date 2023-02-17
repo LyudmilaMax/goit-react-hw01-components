@@ -11,5 +11,7 @@ export const theme = {
         titleColorThead: '#fff',
         borderColor: '#858080',
         borderTableColor: '#ccc',
-    }
+    },
+    spacing: value => `${4 * value}px`,
+
 }

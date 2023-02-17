@@ -21,7 +21,7 @@ export const CaptionTransaction = styled.th`
   text-transform: uppercase;
   border: ${props => `2px solid ${props.theme.colors.borderTableColor}`};
   font-size: 18px;
-  padding: 10px 20px;
+  padding: ${props => props.theme.spacing(3)};
    
 `;
 
@@ -36,6 +36,6 @@ export const Line = styled.tr`
 `;
 
 export const Cell = styled.td`
-  padding: 10px;
+  padding: ${props => props.theme.spacing(2)};
   border: ${props => `2px solid ${props.theme.colors.borderTableColor}`};
 `;

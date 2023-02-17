@@ -5,7 +5,7 @@ export const ItemFriend = styled.li`
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 15px;
+  padding: ${props => props.theme.spacing(4)};
   background-color: ${props => props.theme.colors.backgroundColorSecondary};
   box-shadow: ${ props => `5px 5px 10px ${props.theme.colors.boxShadow}`};
     
@@ -25,7 +25,7 @@ export const StatusFriend = styled.span`
 
 export const ImgFriend = styled.img`
   width: 80px;
-  padding: 4px;
+  padding: ${props => props.theme.spacing(1)};
   background-color: ${props => props.theme.colors.backgroundColorGray};
   border-radius: 4px;
 `;
