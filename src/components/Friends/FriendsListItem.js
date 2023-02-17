@@ -10,7 +10,7 @@ const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
     <ItemFriend>
       <StatusFriend
-        style={{ backgroundColor: `${isOnline ? 'green' : 'red'}` }}
+       style={{ backgroundColor: `${isOnline ? 'green' : 'red'}` }} 
       ></StatusFriend>
       <ImgFriend src={avatar} alt={name} width="48" />
       <NameFriend>{name}</NameFriend>

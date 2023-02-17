@@ -8,23 +8,16 @@ import {
   Parcentage,
 } from './Staticics.styled';
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777216).toString(16)}`;
-}
-
 const Statistics = ({ title, stats }) => {
   return (
     <SectionStatistics>
       {title && <Title>{title}</Title>}
 
       <StatList>
-        {stats.map(item => (
-          <StatItem
-            key={item.id}
-            style={{ backgroundColor: getRandomHexColor() }}
-          >
-            <Label>{item.label}</Label>
-            <Parcentage>{item.percentage}%</Parcentage>
+        {stats.map(({ id, label, percentage }) => (
+          <StatItem key={id} >
+            <Label>{label}</Label>
+            <Parcentage>{percentage}%</Parcentage>
           </StatItem>
         ))}
       </StatList>

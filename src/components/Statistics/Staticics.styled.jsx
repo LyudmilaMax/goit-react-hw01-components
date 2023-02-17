@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
 
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777216).toString(16)}`;
+}
+
 export const SectionStatistics = styled.section`
-  
   width: 400px;
   text-align: center;
-  background-color: white;
-  box-shadow: 5px 5px 10px #706a6a;
+  background-color: ${props => props.theme.colors.backgroundColorSecondary};
+  box-shadow: ${ props => `5px 5px 10px ${props.theme.colors.boxShadow}`};
   
     &:hover,
     &:focus {
@@ -17,25 +20,24 @@ export const SectionStatistics = styled.section`
 export const Title = styled.h2`
   padding: 25px;
   font-size: 36px;
-  color: #413939;
-  
+  color: ${props => props.theme.colors.titleColor};
 `;
 
 export const StatList = styled.ul`
   display: flex;
   justify-content: center;
-//   color: white;
-  color: rgb(128, 128, 128);
+  color: ${props => props.theme.colors.textSecondary};
 `;
+
 
 export const StatItem = styled.li`
   display: flex;
   flex-direction: column;
-  padding: 10px;
   gap: 10px;
+  padding: 10px;
   width: 100%;
   padding: 10px;
-//   border: 1px solid rgb(133, 128, 128);
+  background-color: ${getRandomHexColor};
 `;
 
 export const Label = styled.span`

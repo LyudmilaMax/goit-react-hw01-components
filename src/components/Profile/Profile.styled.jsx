@@ -5,7 +5,7 @@ export const ProfileCard = styled.div`
   top: 50px;
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 5px 5px 10px #706a6a;
+  box-shadow: ${ props => `5px 5px 10px ${props.theme.colors.boxShadow}`};
   
     &:hover,
     &:focus {
@@ -20,7 +20,7 @@ export const Description = styled.div`
   gap: 20px;
   align-items: center;
   padding: 20px 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: ${props => props.theme.colors.backgroundColorSecondary};
 `;
 
 export const PhotoUser = styled.img`
@@ -35,20 +35,19 @@ export const NameUser = styled.p`
 
 export const TagUser = styled.p`
   font-size: 20px;
-  color: rgb(133, 128, 128);
+  color: ${props => props.theme.colors.textSecondary};
   text-align: center;
 `;
 
 export const LocationUser = styled.p`
   font-size: 20px;
-  color: rgb(133, 128, 128);
+  color: ${props => props.theme.colors.textSecondary};
   text-align: center;
 `;
 
 export const StatsList = styled.ul`
   display: flex;
   font-size: 20px;
-  background-color: rgb(224, 220, 220);
 `;
 
 export const StatsItem = styled.li`
@@ -57,17 +56,17 @@ export const StatsItem = styled.li`
   align-items: center;
   width: 100%;
   padding: 10px;
-  border: 1px solid rgb(133, 128, 128);
+  border: ${props => `1px solid ${props.theme.colors.borderColor}`};
 `;
 
 export const Label = styled.span`
   font-size: 16px;
-  color: rgb(133, 128, 128);
+  color: ${props => props.theme.colors.textSecondary};
   text-align: center;
 `;
 
 export const QuantityStats = styled.span`
   font-size: 20px;
-  text-align: center;
   font-weight: 700;
+  text-align: center;
 `;
