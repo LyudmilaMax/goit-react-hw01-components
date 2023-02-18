@@ -17,9 +17,7 @@ export const ItemFriend = styled.li`
 `;
 
 export const StatusFriend = styled.span`
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
+  color: ${props => (props.isOnline ? 'green' : 'red')};
 
 `;
 

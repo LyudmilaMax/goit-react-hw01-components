@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { FaCircle } from 'react-icons/fa';
 import {
   ItemFriend,
   StatusFriend,
@@ -9,9 +10,9 @@ import {
 const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
     <ItemFriend>
-      <StatusFriend
-       style={{ backgroundColor: `${isOnline ? 'green' : 'red'}` }} 
-      ></StatusFriend>
+      <StatusFriend isOnline={isOnline}>
+        <FaCircle />
+      </StatusFriend>
       <ImgFriend src={avatar} alt={name} width="48" />
       <NameFriend>{name}</NameFriend>
     </ItemFriend>
