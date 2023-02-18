@@ -18,7 +18,6 @@ export const ItemFriend = styled.li`
 
 export const StatusFriend = styled.span`
   color: ${props => (props.isOnline ? 'green' : 'red')};
-
 `;
 
 export const ImgFriend = styled.img`
